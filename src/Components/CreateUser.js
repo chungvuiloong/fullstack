@@ -1,8 +1,9 @@
 import {useState} from 'react';
 import axios from "axios";
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function CreateUser() {
+    const navigate = useNavigate();
 const [inputs, setInputs] = useState({});
 
 const handleChange = (e) => {
@@ -16,7 +17,7 @@ const handleSubmit = (e) => {
     //Link to php mamp, folder api, 
     axios.post('http://localhost:8005/api/', inputs).then(function(response) {
         console.log(response.data);
-        Navigate("/");
+        navigate("/");
     });
 
     console.log(inputs);

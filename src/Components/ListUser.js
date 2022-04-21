@@ -31,7 +31,7 @@ export default function ListUser() {
                 </tr>
             </thead>
             <tbody>
-                {users.map((user,key) => {
+                {users.map((user,key) => (
                     <tr key={key}>
                         <td>{user.id}</td>
                         <td>{user.name}</td>
@@ -39,7 +39,7 @@ export default function ListUser() {
                         <td>{user.mobile}</td>
                     </tr>
 
-                })}
+                ))}
             </tbody>
         </table>
     </div>;
